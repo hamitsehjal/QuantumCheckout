@@ -10,6 +10,15 @@ import UIKit
 class ItemStore{
     var allItems = [Item]()
     
+    // designated initializer to add 2 new items
+    init() {
+        
+            let item1 = Item(name: "Computer", quantity: 5, price: 400.99)
+            let item2=Item(name: "Monitor", quantity: 3, price: 200.99)
+            allItems.append(item1)
+            allItems.append(item2)
+    }
+    
     /**
      create a newItem using convinience initializer and add the item to the items collection
      */
@@ -19,15 +28,14 @@ class ItemStore{
         return newItem
     }
     
-    // designated initializer to add 2 new items
-    init() {
-        
-            let item1 = Item(name: "Computer", quantity: 5, price: 400.99)
-            let item2=Item(name: "Monitor", quantity: 3, price: 200.99)
-            allItems.append(item1)
-            allItems.append(item2)
-        
+    /**
+     remove an item from the store
+     */
+    func removeItem(_ item:Item){
+        // find the index of the item to be removed
+        if let index=allItems.firstIndex(of: item){
+            // remove the item from the collections at a specific index
+            allItems.remove(at: index)
+        }
     }
-    
-    
 }

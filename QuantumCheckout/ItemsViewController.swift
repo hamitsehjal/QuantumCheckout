@@ -10,7 +10,11 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var itemStore:ItemStore!
     
-    // Insert a new row to table
+    /**
+     Insert a new row to table
+     - Add a new item to the Data Source
+     - Updates the tableview
+     */
     @IBAction func addNewItem(_ sender:UIButton){
         
         // Create a new item and add it to the store
@@ -48,6 +52,8 @@ class ItemsViewController: UITableViewController {
         }
 
     }
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +78,7 @@ class ItemsViewController: UITableViewController {
     }
 
     
+    // Configure the content to be displayed in the cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         
@@ -100,17 +107,20 @@ class ItemsViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            
+            // remove the item from the data store (itemStore)
+            let item=itemStore.allItems[indexPath.row]
+            itemStore.removeItem(item)
+            
+            // Delete the row from the tableview with an animation
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
