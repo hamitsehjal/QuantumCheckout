@@ -93,8 +93,9 @@ class ItemsViewController: UITableViewController {
         let item=itemStore.allItems[indexPath.row]
         
         // set the cell labels with the item properties
-        cell.textLabel?.text=item.name
+        cell.textLabel?.text="\(item.name) (\(item.quantity))"
         cell.detailTextLabel?.text="$ \(item.price)"
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
