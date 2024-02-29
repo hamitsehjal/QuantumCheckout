@@ -33,8 +33,6 @@ class Item:Equatable{
             
             // Creating a array of Product Tuples
             var products:[Product]=[]
-//            products.append(("Computer", 400.99))
-//            products.append(("Monitor", 200.99))
             products.append(("Smartphone", 690.99))
             products.append(("Speaker", 149.99))
             products.append(("SmartWatch", 89.99))
