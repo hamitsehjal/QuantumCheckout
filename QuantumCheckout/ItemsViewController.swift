@@ -8,7 +8,8 @@
 import UIKit
 
 class ItemsViewController: UITableViewController {
-
+    var itemStore:ItemStore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,23 +24,35 @@ class ItemsViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return itemStore.allItems.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+        
+        // Get a new or recycled cell with identifier "UITableViewCell" and add it to the table
+        let cell=tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        
+        // set the text on the cell with the description of the item
+        // that is at the nth index of items collections, where n = row this cell
+        // will appear on
+        
+        // Extract the item from the collection
+        let item=itemStore.allItems[indexPath.row]
+        
+        // set the cell labels with the item properties
+        cell.textLabel?.text=item.name
+        cell.detailTextLabel?.text="$ \(item.price)"
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
