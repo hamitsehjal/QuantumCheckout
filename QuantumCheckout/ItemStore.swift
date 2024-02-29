@@ -16,15 +16,17 @@ class ItemStore{
     @discardableResult func createItem()->Item{
         let newItem=Item(random: true)
         allItems.append(newItem)
-        
         return newItem
     }
     
     // designated initializer to add 2 new items
     init() {
-        for _ in 0..<2{
-            createItem()
-        }
+        
+            let item1 = Item(name: "Computer", quantity: 5, price: 400.99)
+            let item2=Item(name: "Monitor", quantity: 3, price: 200.99)
+            allItems.append(item1)
+            allItems.append(item2)
+        
     }
     
     

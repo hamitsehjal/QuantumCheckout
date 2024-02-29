@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Item{
+class Item:Equatable{
     var name:String
     var quantity:Int
     var price:Float
@@ -33,8 +33,8 @@ class Item{
             
             // Creating a array of Product Tuples
             var products:[Product]=[]
-            products.append(("Computer", 400.99))
-            products.append(("Monitor", 200.99))
+//            products.append(("Computer", 400.99))
+//            products.append(("Monitor", 200.99))
             products.append(("Smartphone", 690.99))
             products.append(("Speaker", 149.99))
             products.append(("SmartWatch", 89.99))
@@ -52,5 +52,12 @@ class Item{
         else{
             self.init(name:"",quantity: 0,price:0.00)
         }
+    }
+    
+    static func ==(lfs:Item,rhs:Item)->Bool{
+        return lfs.name==rhs.name
+        && lfs.price==rhs.price
+        && lfs.quantity==rhs.quantity
+        && lfs.dateCreated==rhs.dateCreated
     }
 }
