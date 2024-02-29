@@ -10,6 +10,33 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var itemStore:ItemStore!
     
+    // add a new item to table
+    @IBAction func addNewItem(_ sender:UIButton){
+        
+    }
+    
+    /**
+     Toggle Editing Mode and inform user the state of the view
+     - when user is not in editing mode, title shows "Edit"
+     - when user enters editing mode, title shows "Done"
+     */
+    @IBAction func toggleEditingMode(_ sender:UIButton){
+        // If we are currently in editing mode
+        if isEditing{
+            // change the text on the Button to display "Edit"
+            sender.setTitle("Edit", for: .normal)
+            
+            // turn off the editing mode
+            setEditing(false, animated: true)
+        }else{
+            // change the text on the Button to display "Done"
+            sender.setTitle("Done", for: .normal)
+            
+            // turn on the editing mode
+            setEditing(true, animated: true)
+        }
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +44,7 @@ class ItemsViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
