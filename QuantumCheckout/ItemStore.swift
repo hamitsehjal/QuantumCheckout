@@ -38,4 +38,23 @@ class ItemStore{
             allItems.remove(at: index)
         }
     }
+    
+    /**
+     rearrange an item in the store
+     
+     */
+    func moveItem(from fromIndex:Int,to toIndex:Int){
+        if fromIndex==toIndex{
+            return
+        }
+        
+        // Get reference to the object being moved
+        let movedItem=allItems[fromIndex]
+        
+        // Remove item from the collection
+        allItems.remove(at: fromIndex)
+        
+        // Insert item at new location in the collection
+        allItems.insert(movedItem, at: toIndex)
+    }
 }
