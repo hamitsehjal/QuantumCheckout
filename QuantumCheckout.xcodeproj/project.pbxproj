@@ -20,6 +20,7 @@
 		3AADCD8E2B90FBC700BCA856 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD8B2B90FBC600BCA856 /* ItemsViewController.swift */; };
 		3AADCD902B90FCA500BCA856 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD8F2B90FCA500BCA856 /* Item.swift */; };
 		3AADCD922B91056900BCA856 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD912B91056900BCA856 /* ItemStore.swift */; };
+		3AADCD942B9155A100BCA856 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD932B9155A100BCA856 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3AADCD8B2B90FBC600BCA856 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		3AADCD8F2B90FCA500BCA856 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3AADCD912B91056900BCA856 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		3AADCD932B9155A100BCA856 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				3AADCD5D2B90F73D00BCA856 /* SceneDelegate.swift */,
 				3AADCD8B2B90FBC600BCA856 /* ItemsViewController.swift */,
 				3AADCD912B91056900BCA856 /* ItemStore.swift */,
+				3AADCD932B9155A100BCA856 /* DetailViewController.swift */,
 				3AADCD612B90F73D00BCA856 /* Main.storyboard */,
 				3AADCD8F2B90FCA500BCA856 /* Item.swift */,
 				3AADCD642B90F73F00BCA856 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 				3AADCD902B90FCA500BCA856 /* Item.swift in Sources */,
 				3AADCD5C2B90F73D00BCA856 /* AppDelegate.swift in Sources */,
 				3AADCD8C2B90FBC600BCA856 /* ItemsViewController.swift in Sources */,
+				3AADCD942B9155A100BCA856 /* DetailViewController.swift in Sources */,
 				3AADCD922B91056900BCA856 /* ItemStore.swift in Sources */,
 				3AADCD5E2B90F73D00BCA856 /* SceneDelegate.swift in Sources */,
 			);

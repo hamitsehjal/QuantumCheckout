@@ -71,6 +71,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="maQ-l4-R5Y" kind="show" identifier="showItem" id="fYZ-nc-bng"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -81,18 +84,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2X-et-Ltd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160" y="-103"/>
+            <point key="canvasLocation" x="-161.06870229007632" y="-103.52112676056339"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="7M6-tp-8D5">
             <objects>
-                <viewController id="maQ-l4-R5Y" sceneMemberID="viewController">
+                <viewController id="maQ-l4-R5Y" customClass="DetailViewController" customModule="QuantumCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVJ-k6-4Mi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fHJ-Kc-lNO">
-                                <rect key="frame" x="8" y="67" width="377" height="743"/>
+                                <rect key="frame" x="8" y="8" width="377" height="826"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R02-pQ-jvz">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="34"/>
@@ -142,24 +145,21 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-sk-PAC">
-                                        <rect key="frame" x="0.0" y="126" width="377" height="617"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e7l-01-2A8">
+                                        <rect key="frame" x="0.0" y="126" width="377" height="700"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-Ma-hdV">
-                                                <rect key="frame" x="45" y="291.33333333333331" width="77" height="34.333333333333314"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCL-qI-RTJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="700"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSn-Nf-vuC">
-                                                <rect key="frame" x="260" y="291.33333333333331" width="61" height="34.333333333333314"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMi-iR-zs5">
+                                                <rect key="frame" x="192.66666666666663" y="0.0" width="184.33333333333337" height="700"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="f8o-1V-9v6" firstAttribute="leading" secondItem="PPc-e6-hWM" secondAttribute="leading" id="aCD-Od-rkr"/>
@@ -176,10 +176,16 @@
                             <constraint firstItem="fHJ-Kc-lNO" firstAttribute="top" secondItem="Bi4-nq-knB" secondAttribute="top" constant="8" id="rmk-9O-Yl7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ee7-i1-0GC"/>
+                    <connections>
+                        <outlet property="quantityField" destination="uRC-TE-H1R" id="N7W-gu-ibc"/>
+                        <outlet property="titleField" destination="f8o-1V-9v6" id="Mqe-LK-nxl"/>
+                        <outlet property="valueField" destination="PPc-e6-hWM" id="OgT-3q-D9Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2el-Y2-qab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.51908396946567" y="-84.507042253521135"/>
+            <point key="canvasLocation" x="627" y="-104"/>
         </scene>
     </scenes>
     <resources>
