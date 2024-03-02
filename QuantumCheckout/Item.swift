@@ -31,7 +31,7 @@ class Item:Equatable{
 
             typealias Product=(productName:String,productPrice:Float)
             
-            // Creating a array of Product Tuples
+            // Creating a array of type - Product(name,price)
             var products:[Product]=[]
             products.append(("Smartphone", 690.99))
             products.append(("Speaker", 149.99))

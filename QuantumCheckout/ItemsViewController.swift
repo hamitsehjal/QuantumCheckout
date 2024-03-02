@@ -15,7 +15,7 @@ class ItemsViewController: UITableViewController {
      - Add a new item to the Data Source
      - Updates the tableview
      */
-    @IBAction func addNewItem(_ sender:UIButton){
+    @IBAction func addNewItem(_ sender:UIBarButtonItem){
         
         // Create a new item and add it to the store
         let item = itemStore.createItem()
@@ -35,28 +35,28 @@ class ItemsViewController: UITableViewController {
      - when user is not in editing mode, title shows "Edit"
      - when user enters editing mode, title shows "Done"
      */
-    @IBAction func toggleEditingMode(_ sender:UIButton){
-        // If we are currently in editing mode
-        if isEditing{
-            // change the text on the Button to display "Edit"
-            sender.setTitle("Edit", for: .normal)
-            
-            // turn off the editing mode
-            setEditing(false, animated: true)
-        }else{
-            // change the text on the Button to display "Done"
-            sender.setTitle("Done", for: .normal)
-            
-            // turn on the editing mode
-            setEditing(true, animated: true)
-        }
-
-    }
-    
+//    @IBAction func toggleEditingMode(_ sender:UIButton){
+//        // If we are currently in editing mode
+//        if isEditing{
+//            // change the text on the Button to display "Edit"
+//            sender.setTitle("Edit", for: .normal)
+//            
+//            // turn off the editing mode
+//            setEditing(false, animated: true)
+//        }else{
+//            // change the text on the Button to display "Done"
+//            sender.setTitle("Done", for: .normal)
+//            
+//            // turn on the editing mode
+//            setEditing(true, animated: true)
+//        }
+//
+//    }
+//    
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -64,6 +64,11 @@ class ItemsViewController: UITableViewController {
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,6 +145,11 @@ class ItemsViewController: UITableViewController {
     }
     */
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem=editButtonItem
+    }
     
     // MARK: - Navigation
 
