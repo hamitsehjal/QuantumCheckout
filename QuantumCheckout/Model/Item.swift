@@ -9,7 +9,7 @@ import UIKit
 
 class Item:Equatable{
     var name:String
-    var quantity:Int
+    var quantityInStock:Int
     var price:Float
     var dateCreated:Date
     
@@ -17,7 +17,7 @@ class Item:Equatable{
     // designated initializer
     init(name: String, quantity: Int, price: Float) {
         self.name = name
-        self.quantity = quantity
+        self.quantityInStock = quantity
         self.price = price
         self.dateCreated=Date()
     }
@@ -55,7 +55,7 @@ class Item:Equatable{
     static func ==(lfs:Item,rhs:Item)->Bool{
         return lfs.name==rhs.name
         && lfs.price==rhs.price
-        && lfs.quantity==rhs.quantity
+        && lfs.quantityInStock==rhs.quantityInStock
         && lfs.dateCreated==rhs.dateCreated
     }
 }

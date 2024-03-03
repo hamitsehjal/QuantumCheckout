@@ -20,10 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // creat an instance of item
         let itemStore=ItemStore()
-        
+        let purchaseHistory=PurchaseStore()
         // Access the ShopViewController and set its shopItems property
         let shopController=window!.rootViewController as! ShopViewController
         shopController.shopItems=itemStore
+        shopController.purchaseHistory=purchaseHistory
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

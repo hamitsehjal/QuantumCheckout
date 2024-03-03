@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A27743F2B940C91008E8E32 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27743E2B940C91008E8E32 /* ShopViewController.swift */; };
+		3A2774422B947DC8008E8E32 /* PurchaseHistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2774412B947DC8008E8E32 /* PurchaseHistoryEntry.swift */; };
+		3A2774452B94803F008E8E32 /* PurchaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2774442B94803F008E8E32 /* PurchaseStore.swift */; };
 		3AADCD5C2B90F73D00BCA856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD5B2B90F73D00BCA856 /* AppDelegate.swift */; };
 		3AADCD5E2B90F73D00BCA856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD5D2B90F73D00BCA856 /* SceneDelegate.swift */; };
 		3AADCD632B90F73D00BCA856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCD612B90F73D00BCA856 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		3A27743E2B940C91008E8E32 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		3A2774412B947DC8008E8E32 /* PurchaseHistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryEntry.swift; sourceTree = "<group>"; };
+		3A2774442B94803F008E8E32 /* PurchaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStore.swift; sourceTree = "<group>"; };
 		3AADCD582B90F73D00BCA856 /* QuantumCheckout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantumCheckout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AADCD5B2B90F73D00BCA856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AADCD5D2B90F73D00BCA856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			children = (
 				3AADCD8F2B90FCA500BCA856 /* Item.swift */,
 				3AADCD912B91056900BCA856 /* ItemStore.swift */,
+				3A2774412B947DC8008E8E32 /* PurchaseHistoryEntry.swift */,
+				3A2774442B94803F008E8E32 /* PurchaseStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 				3AADCD942B9155A100BCA856 /* DetailViewController.swift in Sources */,
 				3A27743F2B940C91008E8E32 /* ShopViewController.swift in Sources */,
 				3AADCD922B91056900BCA856 /* ItemStore.swift in Sources */,
+				3A2774452B94803F008E8E32 /* PurchaseStore.swift in Sources */,
+				3A2774422B947DC8008E8E32 /* PurchaseHistoryEntry.swift in Sources */,
 				3ACF729D2B93F9970064EEE0 /* HistoryViewController.swift in Sources */,
 				3AADCD5E2B90F73D00BCA856 /* SceneDelegate.swift in Sources */,
 			);

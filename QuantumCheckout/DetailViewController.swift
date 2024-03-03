@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
         titleField.text=item.name
         // convert price value to string and assign to label
         valueField.text=numberFormatter.string(from: NSNumber(value: item.price))
-        quantityField.text="\(item.quantity)"
+        quantityField.text="\(item.quantityInStock)"
     }
     
     /**
@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
         // If that worked, assign the NSNumbe.intValue to the item's quantity property
         if let quantityText=quantityField.text,
            let value=numberFormatter.number(from: quantityText){
-            item.quantity=value.intValue
+            item.quantityInStock=value.intValue
         }
         
         // Attempt to convert Price Field's value(string) to Item's Price (decimal)
