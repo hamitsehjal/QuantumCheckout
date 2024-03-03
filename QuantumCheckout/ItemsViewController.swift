@@ -29,31 +29,7 @@ class ItemsViewController: UITableViewController {
         }
   
     }
-    
-    /**
-     Toggle Editing Mode and inform user the state of the view
-     - when user is not in editing mode, title shows "Edit"
-     - when user enters editing mode, title shows "Done"
-     */
-//    @IBAction func toggleEditingMode(_ sender:UIButton){
-//        // If we are currently in editing mode
-//        if isEditing{
-//            // change the text on the Button to display "Edit"
-//            sender.setTitle("Edit", for: .normal)
-//            
-//            // turn off the editing mode
-//            setEditing(false, animated: true)
-//        }else{
-//            // change the text on the Button to display "Done"
-//            sender.setTitle("Done", for: .normal)
-//            
-//            // turn on the editing mode
-//            setEditing(true, animated: true)
-//        }
-//
-//    }
-//    
-   
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A27743F2B940C91008E8E32 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27743E2B940C91008E8E32 /* ShopViewController.swift */; };
 		3AADCD5C2B90F73D00BCA856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD5B2B90F73D00BCA856 /* AppDelegate.swift */; };
 		3AADCD5E2B90F73D00BCA856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADCD5D2B90F73D00BCA856 /* SceneDelegate.swift */; };
 		3AADCD632B90F73D00BCA856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AADCD612B90F73D00BCA856 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A27743E2B940C91008E8E32 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		3AADCD582B90F73D00BCA856 /* QuantumCheckout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantumCheckout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AADCD5B2B90F73D00BCA856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AADCD5D2B90F73D00BCA856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A2774402B946058008E8E32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AADCD8F2B90FCA500BCA856 /* Item.swift */,
+				3AADCD912B91056900BCA856 /* ItemStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3AADCD4F2B90F73D00BCA856 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +123,11 @@
 				3AADCD5B2B90F73D00BCA856 /* AppDelegate.swift */,
 				3AADCD5D2B90F73D00BCA856 /* SceneDelegate.swift */,
 				3AADCD8B2B90FBC600BCA856 /* ItemsViewController.swift */,
-				3AADCD912B91056900BCA856 /* ItemStore.swift */,
+				3A2774402B946058008E8E32 /* Model */,
 				3AADCD932B9155A100BCA856 /* DetailViewController.swift */,
 				3AADCD612B90F73D00BCA856 /* Main.storyboard */,
+				3A27743E2B940C91008E8E32 /* ShopViewController.swift */,
 				3ACF729C2B93F9970064EEE0 /* HistoryViewController.swift */,
-				3AADCD8F2B90FCA500BCA856 /* Item.swift */,
 				3AADCD642B90F73F00BCA856 /* Assets.xcassets */,
 				3AADCD662B90F73F00BCA856 /* LaunchScreen.storyboard */,
 				3AADCD692B90F73F00BCA856 /* Info.plist */,
@@ -276,6 +287,7 @@
 				3AADCD5C2B90F73D00BCA856 /* AppDelegate.swift in Sources */,
 				3AADCD8C2B90FBC600BCA856 /* ItemsViewController.swift in Sources */,
 				3AADCD942B9155A100BCA856 /* DetailViewController.swift in Sources */,
+				3A27743F2B940C91008E8E32 /* ShopViewController.swift in Sources */,
 				3AADCD922B91056900BCA856 /* ItemStore.swift in Sources */,
 				3ACF729D2B93F9970064EEE0 /* HistoryViewController.swift in Sources */,
 				3AADCD5E2B90F73D00BCA856 /* SceneDelegate.swift in Sources */,
