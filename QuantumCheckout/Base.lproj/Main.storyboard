@@ -187,11 +187,11 @@
                             <outlet property="delegate" destination="65Z-BT-TBB" id="Rh5-eS-EXq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="History" image="doc.richtext.fill.he" catalog="system" id="q34-th-2rf"/>
+                    <navigationItem key="navigationItem" title="History" id="6BI-jb-e3T"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HJ-zE-dla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="635"/>
+            <point key="canvasLocation" x="1692.3664122137404" y="634.50704225352115"/>
         </scene>
         <!--Inventory-->
         <scene sceneID="zji-BK-FU4">
@@ -218,17 +218,37 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3em-Tf-C2c" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Sg-eb-EcS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="7qj-qD-2hN" kind="relationship" relationship="viewControllers" id="pwe-Pa-dfF"/>
-                        <segue destination="65Z-BT-TBB" kind="relationship" relationship="viewControllers" id="7om-fz-os2"/>
+                        <segue destination="WHS-ny-CYT" kind="relationship" relationship="viewControllers" id="7om-fz-os2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiI-6J-F4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-161.06870229007632" y="-103.52112676056339"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="cYn-vk-Ud6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WHS-ny-CYT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="doc.richtext.fill.he" catalog="system" id="q34-th-2rf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JCq-TM-x28">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="65Z-BT-TBB" kind="relationship" relationship="rootViewController" id="KLW-Zf-WRw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-YA-bEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765.64885496183206" y="634.50704225352115"/>
         </scene>
     </scenes>
     <resources>
