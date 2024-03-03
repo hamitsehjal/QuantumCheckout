@@ -77,9 +77,60 @@ class ShopViewController: UIViewController{
         purchaseHistory.createNewEntry(item: itemSelected, quantityPurchased: quantitySelectedByUser)
         
         // Notify the User
-//        totalPriceLabel.text="\(totalPriceLabel.text)\(✅)"
         totalPriceLabel.text = "\(totalPriceLabel.text!) ✅"
 
+    }
+    
+    // handle the manager button interaction
+    @IBAction func managerBtnTapped(_ sender: UIButton) {
+    showCodeVerificationAlert()
+    }
+    
+    // show an alert for code verification
+    func showCodeVerificationAlert(){
+        let alertController=UIAlertController(title: "Enter Code", message: nil, preferredStyle: .alert)
+        
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder="Enter Code"
+            textField.isSecureTextEntry=true
+        })
+        
+        // actions user can take
+        
+        // cancel Action
+        let cancelAction=UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        // verify Action
+        // using trailing closure syntax
+        // [weak self]: captures self weakly to avoid retain cycles
+        // '_': closure is being triggered by the 'verify' action but it doesn't use any information provided by this action, therefore '_' as a placeholder for unused variable
+        let verifyAction=UIAlertAction(title: "Verify", style: .default){[weak self] _ in
+            if let enteredCode=alertController.textFields?.first?.text,enteredCode=="1234"{
+                // code matches, perform Segue
+                self?.performSegue(withIdentifier: "allowManager", sender: nil)
+                
+            }else{
+                // code doens't match, show an alert or other response
+                self?.showMissMatchAlert()
+            }
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(verifyAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    // show Code Mismatch Alert
+    func showMissMatchAlert(){
+        let misMatchAlert=UIAlertController(title: "Code Mismatch", message: "The entered code is incorrect", preferredStyle: .alert)
+        
+        let okAction=UIAlertAction(title: "OK", style: .default, handler: nil)
+        misMatchAlert.addAction(okAction)
+        
+        present(misMatchAlert,animated: true,completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

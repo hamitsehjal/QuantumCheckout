@@ -226,7 +226,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Manager"/>
                                 <connections>
-                                    <segue destination="3em-Tf-C2c" kind="presentation" id="qZC-H8-rhn"/>
+                                    <action selector="managerBtnTapped:" destination="8aw-Q0-42W" eventType="touchUpInside" id="d2n-Vt-hlO"/>
+                                    <segue destination="3em-Tf-C2c" kind="presentation" identifier="allowManager" id="qZC-H8-rhn"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgd-tA-xtb">
