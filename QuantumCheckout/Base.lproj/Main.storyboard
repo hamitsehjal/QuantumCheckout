@@ -129,11 +129,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="605"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelBtnTapped:" destination="maQ-l4-R5Y" eventType="touchUpInside" id="Nds-wB-NWc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMi-iR-zs5">
                                                 <rect key="frame" x="192.66666666666663" y="0.0" width="184.33333333333337" height="605"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveBtnTapped:" destination="maQ-l4-R5Y" eventType="touchUpInside" id="upe-ee-6ld"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -227,7 +233,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Manager"/>
                                 <connections>
                                     <action selector="managerBtnTapped:" destination="8aw-Q0-42W" eventType="touchUpInside" id="d2n-Vt-hlO"/>
-                                    <segue destination="3em-Tf-C2c" kind="presentation" identifier="allowManager" id="qZC-H8-rhn"/>
+                                    <segue destination="3em-Tf-C2c" kind="show" identifier="allowManager" id="wCy-Ln-pCe"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgd-tA-xtb">
@@ -293,6 +299,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3em-Tf-C2c" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bAZ-Fh-9Mh"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Sg-eb-EcS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

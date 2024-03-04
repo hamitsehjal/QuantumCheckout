@@ -29,25 +29,14 @@ class DetailViewController: UIViewController {
         return formatter
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func cancelBtnTapped(_ sender: UIButton) {
+        
+        // navigate back to ItemsViewController
+        // pop off the current view controller from navigation controller's view controller stack
+        navigationController?.popViewController(animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        titleField.text=item.name
-        // convert price value to string and assign to label
-        valueField.text=numberFormatter.string(from: NSNumber(value: item.price))
-        quantityField.text="\(item.quantityInStock)"
-    }
-    
-    /**
-        Just  before view is about disappear, set the text fields values to the item instance
-     */
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
         
         // Save changes to item
         item.name=titleField.text ?? ""
@@ -66,8 +55,26 @@ class DetailViewController: UIViewController {
            let value=numberFormatter.number(from: priceText){
             item.price=value.floatValue
         }
-    
+        
+        // navigate back to ItemsViewController
+        // pop off the current view controller from navigation controller's view controller stack
+        navigationController?.popViewController(animated: true)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleField.text=item.name
+        // convert price value to string and assign to label
+        valueField.text=numberFormatter.string(from: NSNumber(value: item.price))
+        quantityField.text="\(item.quantityInStock)"
+    }
+    
+
     /*
     // MARK: - Navigation
 
