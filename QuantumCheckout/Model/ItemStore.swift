@@ -29,6 +29,15 @@ class ItemStore{
     }
     
     /**
+     Update an item
+     */
+    func updateItem(toBeUpdated item:Item,newQuantity quantity:Int){
+        // find the index of the item to be updated
+        if let index=allItems.firstIndex(of: item){
+            allItems[index].quantityInStock=quantity
+        }
+    }
+    /**
      remove an item from the store
      */
     func removeItem(_ item:Item){

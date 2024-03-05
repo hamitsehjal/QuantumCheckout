@@ -9,6 +9,15 @@ import UIKit
 
 class HistoryViewController: UITableViewController {
 
+    var historyStore:PurchaseStore!
+    
+    // helper property for customizing date
+    var dateFormatter:DateFormatter={
+        let formatter=DateFormatter()
+        formatter.dateFormat="M/d/yyyy, h:mm a"
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,18 +37,23 @@ class HistoryViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return historyStore.itemsPurchased.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Get a new or recycled cell with identifier "UITableViewCell" and add it to the table
+        let cell=tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        
+        // Extract the item from the collection
+        let item=historyStore.itemsPurchased[indexPath.row]
+        
+        // set the cell details
 
-        // Configure the cell...
-        let cell=UITableViewCell(style: .subtitle, reuseIdentifier: "UITableViewCell")
-
-        cell.textLabel?.text="Name"
-        cell.detailTextLabel?.text="Price"
+        let itemPurchaseDate=dateFormatter.string(from: item.purchaseDate)
+        cell.textLabel?.text="\(item.purchaseQuantity) X \(item.name)"
+        cell.detailTextLabel?.text="\(itemPurchaseDate)"
         return cell
     }
     

@@ -56,7 +56,7 @@ class ShopViewController: UIViewController{
         if let text=sender.text,
         let value=numberFormatter.number(from: text){
             
-            let price=Float(value.intValue)*itemSelected.price
+//            let price=Float(value.intValue)*itemSelected.price
             quantitySelectedByUser=value.intValue
 //            totalPrice=price
         }
@@ -77,7 +77,12 @@ class ShopViewController: UIViewController{
         
         // create a entry for item Purchased
         purchaseHistory.createNewEntry(item: itemSelected, quantityPurchased: quantitySelectedByUser)
+        let newQuantity=itemSelected.quantityInStock-quantitySelectedByUser
+        // update the product's quantity
+        shopItems.updateItem(toBeUpdated: itemSelected, newQuantity: newQuantity)
         
+        // reload PickerView
+        pickerView.reloadAllComponents()
         // Notify the User
         totalPriceLabel.text = "\(totalPriceLabel.text!) ✅"
 
@@ -143,6 +148,8 @@ class ShopViewController: UIViewController{
         totalPriceLabel.text="\(0.0)"
         buyButton.isEnabled=false
         quantitySelectedByUser=1
+        
+        
     }
     
 
@@ -156,10 +163,13 @@ class ShopViewController: UIViewController{
         
         // Access the ItemsViewController and set its item store
         let tabController=segue.destination as! UITabBarController
-        let navController=tabController.viewControllers![0] as! UINavigationController
-        let itemsController=navController.topViewController as! ItemsViewController
+        let navControllerEdit=tabController.viewControllers![0] as! UINavigationController
+        let navControllerHistory=tabController.viewControllers![1] as! UINavigationController
+        let itemsController=navControllerEdit.topViewController as! ItemsViewController
+        let historyController=navControllerHistory.topViewController as! HistoryViewController
 
         itemsController.itemStore=shopItems
+        historyController.historyStore=purchaseHistory
     }
     
 
