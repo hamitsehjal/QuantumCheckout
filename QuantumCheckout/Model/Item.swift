@@ -10,16 +10,19 @@ import UIKit
 class Item:Equatable{
     var name:String
     var quantityInStock:Int
+    var serialNumber:String?
     var price:Float
     var dateCreated:Date
     
     
     // designated initializer
-    init(name: String, quantity: Int, price: Float) {
+    init(name: String, quantity: Int, price: Float,serial:String?) {
         self.name = name
         self.quantityInStock = quantity
         self.price = price
+        self.serialNumber=serial
         self.dateCreated=Date()
+        
     }
     
     /**
@@ -44,11 +47,11 @@ class Item:Equatable{
             let productPrice=product.productPrice // extract price from the product
             
             let productQuantity=Int.random(in: 1..<6) // generate a random number in the range 1<=5
-            
-            self.init(name:productName,quantity: productQuantity,price:productPrice)
+            let randomSerialNumber=UUID().uuidString.components(separatedBy: "-").first!
+            self.init(name:productName,quantity: productQuantity,price:productPrice,serial: randomSerialNumber)
         }
         else{
-            self.init(name:"",quantity: 0,price:0.00)
+            self.init(name:"",quantity: 0,price:0.00,serial: nil)
         }
     }
     

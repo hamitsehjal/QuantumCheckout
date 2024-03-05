@@ -60,7 +60,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6eD-32-aUp">
                             <connections>
-                                <action selector="addNewItem:" destination="jJN-e4-22C" id="HoM-68-xp3"/>
+                                <segue destination="maQ-l4-R5Y" kind="show" identifier="addItem" id="4ox-rQ-18Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,21 +187,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="Fwf-VM-dOL" detailTextLabel="3hb-3b-0YM" style="IBUITableViewCellStyleSubtitle" id="sw5-qB-xja">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="66.666664123535156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sw5-qB-xja" id="rzX-3W-3J9">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="66.666664123535156"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fwf-VM-dOL">
-                                            <rect key="frame" x="19.999999999999996" y="1" width="37.666666666666664" height="24"/>
+                                            <rect key="frame" x="19.999999999999996" y="9.3333333333333357" width="37.666666666666664" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3hb-3b-0YM">
-                                            <rect key="frame" x="19.999999999999996" y="25" width="52.666666666666664" height="18"/>
+                                            <rect key="frame" x="19.999999999999996" y="37" width="52.666666666666664" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
@@ -216,9 +216,16 @@
                             <outlet property="delegate" destination="65Z-BT-TBB" id="Rh5-eS-EXq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="History" id="6BI-jb-e3T"/>
+                    <navigationItem key="navigationItem" title="History" id="6BI-jb-e3T">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ah9-mU-Kh1">
+                            <connections>
+                                <segue destination="alm-QX-lQe" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="zFG-XV-kKe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HJ-zE-dla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="alm-QX-lQe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1692.3664122137404" y="634.50704225352115"/>
         </scene>
@@ -357,6 +364,9 @@
             <point key="canvasLocation" x="765.64885496183206" y="634.50704225352115"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4ox-rQ-18Q"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.richtext.fill.he" catalog="system" width="115" height="128"/>
         <image name="filemenu.and.cursorarrow.rtl" catalog="system" width="128" height="100"/>

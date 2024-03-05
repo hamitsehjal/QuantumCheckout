@@ -15,20 +15,20 @@ class ItemsViewController: UITableViewController {
      - Add a new item to the Data Source
      - Updates the tableview
      */
-    @IBAction func addNewItem(_ sender:UIBarButtonItem){
-        
-        // Create a new item and add it to the store
-        let item = itemStore.createItem()
-        
-        // Figure out where this item is in the array
-        if let row = itemStore.allItems.firstIndex(of: item){
-            // Create a new IndexPath object in 0th section, `row` row
-            let indexPath=IndexPath(row: row, section: 0)
-            // Insert a new row to the table
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-  
-    }
+//    @IBAction func addNewItem(_ sender:UIBarButtonItem){
+//        
+//        // Create a new item and add it to the store
+//        let item = itemStore.createItem()
+//        
+//        // Figure out where this item is in the array
+//        if let row = itemStore.allItems.firstIndex(of: item){
+//            // Create a new IndexPath object in 0th section, `row` row
+//            let indexPath=IndexPath(row: row, section: 0)
+//            // Insert a new row to the table
+//            tableView.insertRows(at: [indexPath], with: .automatic)
+//        }
+//  
+//    }
        
     @IBAction func doneBtnTapped(_ sender: UIBarButtonItem) {
         print("Done Button Tapped")
@@ -148,6 +148,15 @@ class ItemsViewController: UITableViewController {
                 let detailController = segue.destination as! DetailViewController
                 detailController.item=item
             }
+        case "addItem":
+            // Create a new instance of Item Ojbect
+            let newItem=Item(random: true)
+            
+            // set the detailController's item property
+            let detailController=segue.destination as! DetailViewController
+            detailController.item=newItem
+            detailController.itemStore=itemStore
+            
         case "unwindToShopViewControllerSegue":
             print("Unwind to ShopViewController - Done Clicked")
         default:

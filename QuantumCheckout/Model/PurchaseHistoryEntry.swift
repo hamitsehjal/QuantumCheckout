@@ -17,6 +17,6 @@ class PurchaseHistoryEntry:Item{
         self.purchaseQuantity=quantity
         self.purchaseDate=Date()
         
-        super.init(name:item.name,quantity: item.quantityInStock,price: item.price)
+        super.init(name:item.name,quantity: item.quantityInStock,price: item.price,serial: item.serialNumber)
     }
 }

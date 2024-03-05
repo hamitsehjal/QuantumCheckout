@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    var itemStore:ItemStore?
     
     // DetailViewController holds a reference to the Item that is being currently displayed
     var item:Item!{
@@ -55,10 +55,20 @@ class DetailViewController: UIViewController {
            let value=numberFormatter.number(from: priceText){
             item.price=value.floatValue
         }
-        
-        // navigate back to ItemsViewController
-        // pop off the current view controller from navigation controller's view controller stack
-        navigationController?.popViewController(animated: true)
+        // Check if the item exits in the store
+        if let store=itemStore{
+            if !store.allItems.contains(where:{element in return element.serialNumber == item.serialNumber})
+            {
+                // new Item
+                store.addNewItem(item: item)
+            }
+        }
+            
+            
+            
+            // navigate back to ItemsViewController
+            // pop off the current view controller from navigation controller's view controller stack
+            navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

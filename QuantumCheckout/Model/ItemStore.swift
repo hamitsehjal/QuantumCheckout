@@ -12,9 +12,10 @@ class ItemStore{
     
     // designated initializer to add 2 new items
     init() {
-        
-            let item1 = Item(name: "Computer", quantity: 5, price: 400.99)
-            let item2=Item(name: "Monitor", quantity: 3, price: 200.99)
+        let randomSerialNumber1=UUID().uuidString.components(separatedBy: "-").first!
+        let randomSerialNumber2=UUID().uuidString.components(separatedBy: "-").first!
+            let item1 = Item(name: "Computer", quantity: 5, price: 400.99,serial: randomSerialNumber1)
+            let item2=Item(name: "Monitor", quantity: 3, price: 200.99,serial: randomSerialNumber2)
             allItems.append(item1)
             allItems.append(item2)
     }
@@ -28,6 +29,13 @@ class ItemStore{
         return newItem
     }
     
+    /**
+     Add a new to the collection
+     
+     */
+    func addNewItem(item:Item){
+        allItems.append(item)
+    }
     /**
      Update an item
      */
