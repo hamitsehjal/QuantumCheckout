@@ -30,6 +30,11 @@ class ItemsViewController: UITableViewController {
   
     }
        
+    @IBAction func doneBtnTapped(_ sender: UIBarButtonItem) {
+        print("Done Button Tapped")
+     
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,11 +126,11 @@ class ItemsViewController: UITableViewController {
     }
     */
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        navigationItem.leftBarButtonItem=editButtonItem
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//        navigationItem.leftBarButtonItem=editButtonItem
+//    }
     
     // MARK: - Navigation
 
@@ -143,7 +148,8 @@ class ItemsViewController: UITableViewController {
                 let detailController = segue.destination as! DetailViewController
                 detailController.item=item
             }
-      
+        case "unwindToShopViewControllerSegue":
+            print("Unwind to ShopViewController - Done Clicked")
         default:
             preconditionFailure("Unexpected Segue Failure")
         }

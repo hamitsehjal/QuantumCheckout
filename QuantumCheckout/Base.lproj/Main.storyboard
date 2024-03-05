@@ -52,6 +52,12 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="S5s-qp-2Zr"/>
                     <navigationItem key="navigationItem" title="Inventory" id="M4g-vq-csf">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="done" id="DBA-dA-QBf">
+                            <connections>
+                                <action selector="doneBtnTapped:" destination="jJN-e4-22C" id="nkp-wy-val"/>
+                                <segue destination="IuV-dg-Wp2" kind="unwind" identifier="unwindToShopViewControllerSegue" unwindAction="myUnwindActionWithUnwindSegue:" id="Cqb-ue-T32"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6eD-32-aUp">
                             <connections>
                                 <action selector="addNewItem:" destination="jJN-e4-22C" id="HoM-68-xp3"/>
@@ -60,6 +66,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2X-et-Ltd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IuV-dg-Wp2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1692.3664122137404" y="-103.52112676056339"/>
         </scene>
@@ -297,7 +304,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="xOP-S2-HUN">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3em-Tf-C2c" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="3em-Tf-C2c" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bAZ-Fh-9Mh"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Sg-eb-EcS">
